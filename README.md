@@ -19,5 +19,3 @@
 dotnet build
 dotnet run --project .\Virtual_xg5000.App
 ```
-
-### 테스트 
