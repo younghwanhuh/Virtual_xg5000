@@ -62,6 +62,15 @@ jobs:
           echo "✅ diff.txt 생성 완료 (상위 20줄 미리보기)"
           head -n 20 diff.txt || true
 
+          - name: Debug context
+            run: |
+              echo "EVENT: ${{ github.event_name }}"
+              echo "Branch: ${{ github.ref }}"
+              echo "OPENAI_API_KEY length: ${#OPENAI_API_KEY}"
+              git remote -v
+              git branch -a
+              ls -l
+
       - name: Run GPT Code Review (Korean output)
         id: review
         run: |
